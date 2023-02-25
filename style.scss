@@ -1,0 +1,292 @@
+@import 'variables';
+
+@mixin mobile{
+    @media (max-width:1000px){
+        @content;
+    }
+        
+    
+   
+}
+
+body{
+    background-color: $backround;
+    overflow-x: hidden;
+    
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    font-family: $font-main;
+    color: $text-color;
+    nav{
+        display: flex;
+        align-items: center;
+       
+        a{
+            text-decoration: none;
+            color:$text-color;
+            font-weight: bold;
+            transition: color 0.3s, text-shadow 0.3s;
+            &:hover{
+                color:$red;
+                text-shadow: 2px 2px 10px $red;
+                transition: all 0.5s;
+            }
+            
+        }
+    }
+    #nav-left{
+        img{
+            max-width: 50px;
+        }
+        a{
+            border-right: 1px solid;
+            
+            padding: 0 10px;
+            
+            font-size: 15px;
+            font-weight: 600;
+        }
+    }
+    #nav-right{
+        a{
+            font-size: 14px;
+            color:gray;
+            padding:0 10px;
+        }
+
+    }
+    
+}
+//karsılama alanı//
+.baslik{
+    font-family: $font-second;
+    white-space: nowrap;
+    letter-spacing: 3px;
+
+
+}
+
+.hero{
+   
+    justify-content: space-around;
+    display: flex;
+    padding: 50px;
+    background:linear-gradient(to top,$backround 40%, rgb(215,215,215)40%);
+    @include mobile{
+        align-items: center;
+        flex-direction: column;
+    }
+}
+#slogan{
+    
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    align-items: center;
+    gap: 50px;
+
+    h1{
+       @extend .baslik;
+       font-size: 30px;
+
+    }
+    p{
+        text-align: center;
+        font-size: 24px;
+    }
+    img{
+        max-width: 200px;
+        mix-blend-mode: darken;
+    }
+    h2{
+        @extend .baslik;
+        font-size: 26px;
+
+
+
+    }
+    button{
+        background-color: $red;
+        padding: 10px 50px;
+        font-weight: 700;
+        color: white;
+        letter-spacing: 3px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+
+        &:hover{
+          background-color: rgb(122, 3, 3);
+          transition: all 0.3s;
+        }
+    }
+
+}
+#images{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    &-main{
+        @include mobile {
+            max-width: 500px;
+        }
+        max-width: 900px;
+
+    }
+    &-seconds{
+        mix-blend-mode: darken;
+        max-width: 400px;
+
+    }
+    p{
+        max-width: 500px;
+        text-align: center;
+
+    }
+}
+
+  
+
+
+#inerior{
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background:url(interior.jpg);
+    
+
+   
+   }
+  
+   p{
+    font-size: 24px;
+    max-width: 500px;
+    text-align: center;
+
+
+}
+#btn{
+    color: wheat;
+    padding: 20px 50px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    background-color: transparent;
+    border: 2px solid wheat;
+    &:hover{
+        background-color: white;
+        cursor: pointer;
+        transition: 0.5s;
+        color:black
+    }
+
+}
+// arabalar alanı
+#cars-sectıon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px 0;
+    h1{
+        text-align: center;
+
+    }
+
+    .cars{
+       
+        justify-content: center;
+        padding: 10px 100px;
+        display: flex;
+        @include mobile {
+            flex-direction: column;
+        }
+        &-card{
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            img{
+                mix-blend-mode: darken;
+                width: 100%;
+            }
+            h4{
+                text-align: center;
+                white-space: nowrap;
+            }
+
+    
+        }
+    }
+}
+#btnk{
+    margin-top: 10px;
+    background-color:transparent;
+    border: 1px solid rgb(31, 27, 27);
+    padding: 20px 50px;
+    
+    letter-spacing: 3px;
+    &:hover{
+        background-color: rgb(216, 207, 226);
+        color: black;
+        cursor: pointer;
+    }
+}
+#exterior{
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    background-image: url(exterior-4.jpg);
+   
+    background-position: center;
+    background-size: cover;
+    
+}
+#btn3{
+    margin-top: 10px;
+    background-color: transparent;
+    border: 1px solid wheat;
+    padding: 20px 40px;
+    color: white;
+   
+    letter-spacing: 3px;
+    &:hover{
+        background-color: rgb(32, 28, 37);
+        color:wheat;
+        cursor: pointer;
+         }
+
+}
+footer{
+    background-color: black;
+    display: flex;
+    gap: 50px;
+    padding: 40px;
+    align-items: center;
+    justify-content: center;
+     img{
+        max-width: 200px;
+     }
+     p{
+        color:white
+     }
+
+
+
+}
